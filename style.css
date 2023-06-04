@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  height: 100vh;
+  background: black;
+}
+.main {
+  position: relative;
+  width: 370px;
+  height: 520px;
+  background: white;
+  border-radius: 50px 5px;
+  overflow: hidden;
+}
+.main::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 370px;
+  height: 500px;
+  background: linear-gradient(60deg, transparent, #45f3ff, #45f3ff);
+  animation: animate 6s linear infinite;
+  transform-origin: bottom right;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 370px;
+  height: 500px;
+  background: linear-gradient(60deg, transparent, #d9138a, #d9138a);
+  animation: animate 6s linear infinite;
+  transform-origin: bottom right;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  position: absolute;
+  inset: 1px;
+  border-radius: 50px 5px;
+  z-index: 2;
+  background: white;
+  margin: 7px;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 370px;
+  max-height: 500px;
+  width: 97%;
+  border-radius: 50px 5px;
+  padding: 25px 30px;
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50px 5px;
+}
+
+.img {
+  position: absolute;
+  top: -1px;
+  right: -12px;
+  width: 70px;
+  height: 70px;
+  border: 3px solid #52afa6;
+  border-radius: 0 0 0 50%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0px 10px 0;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  height: 6px;
+  width: 32.5%;
+  bottom: -2px;
+  left: 0;
+  border-radius: 5px;
+  background-color: #1da1f2;
+}
+
+.input-box {
+  width: 100%;
+  height: 45px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border: none;
+}
+
+.underline:before {
+  position: absolute;
+  content: "";
+  height: 2.2px;
+  width: 100%;
+  background: #ccc;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.underline:after {
+  position: absolute;
+  content: "";
+  height: 2.2px;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.4s;
+}
+
+.input-box input:focus ~ .underline:after,
+.input-box input:valid ~ .underline:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.button {
+  margin: 30px 0 10px 0;
+}
+
+.button input {
+  background: #1da1f2;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button input:hover {
+  background: #1da0f250;
+  color: #1da0f2;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+.text {
+  text-align: center;
+  margin: 15px 0 15px 0;
+}
+
+.github a,
+.google a,
+.facebook a,
+.twitter a {
+  width: 100%;
+  height: 37px;
+  color: white;
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  padding-left: 20px;
+  line-height: 40px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.twitter a {
+  background: #1d9bf0;
+}
+
+.twitter a:hover {
+  scale: 1.1;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.github a {
+  background: #24292e;
+}
+
+.github a:hover {
+  scale: 1.1;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.google a {
+  background: #f4b400;
+}
+
+.google a:hover {
+  scale: 1.1;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.facebook a {
+  background: #1877f2;
+}
+
+.facebook a:hover {
+  scale: 1.1;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.github i,
+.google i,
+.facebook i,
+.twitter i {
+  padding: 0 15px 0 5px;
+  scale: 1.8;
+}
